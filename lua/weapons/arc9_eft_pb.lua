@@ -40,7 +40,7 @@ SWEP.DistantShootSoundIndoor = { path .. "pb_indoor_distant1.ogg", path .. "pb_i
 SWEP.RecoilUp = 2.5
 SWEP.RecoilAutoControl = 6
 
-SWEP.DefaultElements = {"eft_pb"} 
+SWEP.DefaultElements = {"eft_pb", "pmmallowed"} 
 
 SWEP.Attachments = {
     { 

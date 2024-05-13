@@ -214,7 +214,7 @@ ATT.MenuCategory = "ARC9 - EFT Attachments"
 ATT.Category = {"eft_custom_pm"}
 ATT.CustomizePos = Vector(24, 21, 4.0)
 
-ATT.ExcludeElements = {"eft_pb_pg_std"}
+ATT.ExcludeElements = {"eft_pb"}
 
 ATT.Attachments = {
     {
