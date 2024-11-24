@@ -430,6 +430,8 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         if rand == 2 and !nomag then -- mag
             ending = "_mag_" .. ending
             
+            if elements["eft_pm_pg_fab"] or elements["eft_pm_pg_fab_od"] or elements["eft_pm_pg_laser"] then ending = ending .. "_fab" end
+
             if ARC9EFTBASE and SERVER then
                 net.Start("arc9eftmagcheck")
                 net.WriteBool(!elements["eft_pm_mag_84"]) -- accurate or not based on mag type
@@ -445,6 +447,7 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
 
         return anim .. (empty and "_empty" or "") .. ending
     elseif anim == "reload" or anim == "reload_empty" then
+        if elements["eft_pm_pg_fab"] or elements["eft_pm_pg_fab_od"] or elements["eft_pm_pg_laser"] then ending = ending .. "_fab" end
         return anim .. (empty and "_empty" or "") .. ending
     elseif anim == "fix" then
         rand = math.Truncate(util.SharedRandom("hi", 1, 4.99))
@@ -480,6 +483,22 @@ local rst_magcheck = {
     { s =  path .. "pm_mag_in.ogg", t = 3.0 },
     { s = randspin, t = 3.35 },
 }
+
+-- new fab check mag do sound table plz
+
+local rst_magcheckfab = {
+    { s = randspin, t = 0.21 },
+    { s =  path .. "pm_mag_button.ogg", t = 0.44 },
+    { s =  path .. "pm_mag_out.ogg", t = 0.53 },
+    { s =  path .. "pm_mag_pullout.ogg", t = 0.83 },
+    { s = randspin, t = 1.17 },
+    { s =  path .. "ppsh_mag_pullout3.ogg", t = 1.78 },
+    { s = randspin, t = 2.44 },
+    { s =  path .. "pm_mag_pullin.ogg", t = 2.7 },
+    { s =  path .. "pm_mag_in.ogg", t = 3.0 },
+    { s = randspin, t = 3.35 },
+}
+
 
 SWEP.Animations = {
     ["idle"] = {
@@ -657,6 +676,123 @@ SWEP.Animations = {
         Mult = 1.1
     },
 
+
+    -- new fucking reloads pls sound tables
+
+    -- only magout is different
+
+    ["reload0_fab"] = {
+        Source = "reload0fab",
+        MinProgress = 0.9,
+        Mult = 0.85,
+        FireASAP = true,
+        EventTable = {
+
+            -- -0.321 on magin and rest
+
+            { s = randspin, t = 0.29 },
+            { s =  path .. "pm_mag_button.ogg", t = 0.52 },
+            { s =  path .. "pm_mag_out.ogg", t = 0.7 },
+            { s =  path .. "pm_mag_pullout.ogg", t = 1.03 },
+            { s = randspin, t = 1.29 },
+            { s = pouchin, t = 1.4 },
+            { s = pouchout, t = 1.58 },
+            { s =  path .. "pm_mag_pullin.ogg", t = 2.15 },
+            { s =  path .. "pm_mag_in.ogg", t = 2.46 },
+            { s = randspin, t = 2.75 },
+        },
+        Mult = 1.1
+    },
+
+    ["reload_empty0_fab"] = {
+        Source = {"reload_empty0fab", "reload_empty0fab1"}, 
+        MinProgress = 0.9,
+        Mult = 0.85,
+        MagSwapTime = 1.3,
+        FireASAP = true,
+        EventTable = {
+
+            -- same length
+
+            { s = randspin, t = 0.08 },
+            { s =  path .. "pm_mag_button.ogg", t = 0.28 },
+            { s =  path .. "pm_mag_out.ogg", t = 0.44 },
+            { s =  path .. "pm_mag_pullout.ogg", t = 0.67 },
+            { s = randspin, t = 0.69 },
+            { s = randspin, t = 1.09 },
+            { s = pouchout, t = 1.2 },
+            { s =  path .. "pm_mag_pullin.ogg", t = 1.64 },
+            { s =  path .. "pm_mag_in.ogg", t = 1.92 },
+            { s = randspin, t = 2.19 },
+            { s =  path .. "pm_catch_button.ogg", t = 2.64 },
+            { s =  path .. "pm_catch_slider.ogg", t = 2.68 },
+            { s = randspin, t = 3.1 },
+
+            {hide = 0, t = 0},
+            {hide = 1, t = 0.86},
+            {hide = 0, t = 1.3}
+        },
+        Mult = 1.1
+    },
+
+    ["reload1_fab"] = {
+        Source = "reload1fab",
+        MinProgress = 0.9,
+        Mult = 0.85,
+        FireASAP = true,
+        EventTable = {
+
+            -- -0.214 on magin and rest
+
+            { s = randspin, t = 0.29 },
+            { s =  path .. "pm_mag_button.ogg", t = 0.52 },
+            { s =  path .. "ppsh_mag_out.ogg", t = 0.7 },
+            { s =  path .. "pm_mag_pullout.ogg", t = 1.07 },
+            { s = randspin, t = 1.29 },
+            { s = pouchin, t = 1.4 },
+            { s = pouchout, t = 1.9 },
+            { s =  path .. "pm_mag_pullin.ogg", t = 2.65 },
+            { s =  path .. "ppsh_mag_in.ogg", t = 3.01 - 0.3 },
+            { s = randspin, t = 3.31 },
+        },
+        Mult = 1.1
+    },
+
+    ["reload_empty1_fab"] = {
+        Source = "reload_empty1fab", 
+        MinProgress = 0.9,
+        Mult = 0.85,
+        FireASAP = true,
+        MagSwapTime = 1.3,
+        EventTable = {
+
+            -- same length
+
+            { s = randspin, t = 0.08 },
+            { s =  path .. "pm_mag_button.ogg", t = 0.32 },
+            { s =  path .. "ppsh_mag_out.ogg", t = 0.55 },
+            { s =  path .. "pm_mag_pullout.ogg", t = 0.64 },
+            { s = randspin, t = 0.94 },
+            { s = pouchout, t = 1.36 },
+            { s =  path .. "pm_mag_pullin.ogg", t = 2.25 },
+            { s =  path .. "ppsh_mag_in.ogg", t = 2.57 - 0.3  },
+            { s = randspin, t = 2.87 },
+            { s =  path .. "pm_catch_button.ogg", t = 3.25 },
+            { s =  path .. "pm_catch_slider.ogg", t = 3.36 },
+            { s = randspin, t = 3.72 },
+
+            {hide = 0, t = 0},
+            {hide = 1, t = 0.86},
+            {hide = 0, t = 1.3}
+        },
+        Mult = 1.1
+    },
+
+
+    -- end of new stuff
+
+
+
     ["toggle"] = {
         Source = "mod_switch",
         EventTable = {{ s = {"arc9_eft_shared/weapon_light_switcher1.ogg", "arc9_eft_shared/weapon_light_switcher2.ogg", "arc9_eft_shared/weapon_light_switcher3.ogg"}, t = 0 },}
@@ -810,6 +946,28 @@ SWEP.Animations = {
         Source = "magcheck1_empty",
         EventTable = rst_magcheck,
     },
+
+
+
+    ["inspect_mag_0_fab"] = {
+        Source = "magcheck0fab",
+        EventTable = rst_magcheckfab,
+    },
+    ["inspect_empty_mag_0_fab"] = {
+        Source = "magcheck0_emptyfab",
+        EventTable = rst_magcheckfab,
+    },
+
+    ["inspect_mag_1_fab"] = {
+        Source = "magcheck1fab",
+        EventTable = rst_magcheckfab,
+    },
+    ["inspect_empty_mag_1_fab"] = {
+        Source = "magcheck1_emptyfab",
+        EventTable = rst_magcheckfab,
+    },
+
+
 
     ["inspect0"] = {
         Source = "check_chamber",

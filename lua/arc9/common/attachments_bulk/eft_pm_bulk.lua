@@ -141,6 +141,52 @@ ATT.Attachments = {
 
 ARC9.LoadAttachment(ATT, "eft_pm_pg_tk")
 
+///////////////////////////////////////      eft_pm_pg_laser
+
+ATT = {}
+
+ATT.PrintName = "PM PM-Laser grip with laser sight"
+ATT.CompactName = "PM-L"
+ATT.Icon = Material("entities/eft_pm_attachments/gfab.png", "mips smooth") -- bad icon but whatever, changes is broken
+ATT.Description = [[A Makarov Pistol grip with built-in magazine release mechanism and laser designator. Manufactured by PM-Laser. ]]
+
+ATT.HasGrip = true 
+
+ATT.EFTErgoAdd = 7
+ATT.CustomPros = { Ergonomics = "+7" }
+
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Category = {"eft_pm_pg"}
+
+
+-- steal this model into this pack, adjust modeloffset and change color to red
+
+-- ATT.Model = "models/weapons/arc9/darsu_eft/mods/pistolgrip_tt_pm_laser.mdl"
+-- ATT.ModelOffset = Vector(0, 0, 0)
+-- ATT.ToggleOnF = true
+-- ATT.ToggleStats = {
+--     {
+--         PrintName = "Blue Laser",
+--         Laser = true,
+--         LaserStrength = 1.3,
+--         LaserFlareMat = Material("effects/arc9_eft/laserdot"),
+--         LaserTraceMat = Material("effects/arc9_eft/lasertrace"),
+--         LaserColor = Color(27, 30, 238),
+--         LaserAttachment = 1,
+--         EFTHipFireSpreadBonus = true,
+--     },   
+--     {
+--         PrintName = "None",
+--     }
+-- }
+
+
+
+ARC9.LoadAttachment(ATT, "eft_pm_pg_laser")
+
+
 ///////////////////////////////////////      eft_pm_mag_8
 
 ATT = {}
