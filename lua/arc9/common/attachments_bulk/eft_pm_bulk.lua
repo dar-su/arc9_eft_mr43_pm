@@ -255,6 +255,8 @@ ATT.CompactName = "Threaded"
 ATT.Icon = Material("entities/eft_pm_attachments/thr.png", "mips smooth")
 ATT.Description = [[A semi-mythical Makarov pistol with an extended threaded barrel for equipping a sound suppressor. Some claim it was a limited production series manufactured in Bulgaria, whilst others insist on it being East German, or even a handcrafted upgrade. As for how it ended up in the Norvinsk region, no living soul could tell you now.]]
 
+ATT.AttNotForNPCs = true 
+
 ATT.SortOrder = -90
 ATT.MenuCategory = "ARC9 - EFT Attachments"
 
