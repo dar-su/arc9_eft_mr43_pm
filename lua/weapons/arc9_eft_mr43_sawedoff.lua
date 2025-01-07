@@ -21,3 +21,9 @@ SWEP.DefaultElements = {"eft_mr43_sawedoff"}
 SWEP.Attachments = {{ Category = "eft_sawedoff_barrel", Installed = "eft_mr43_barrel_310" }, _, { Installed = nil } } -- hack to get different default stock
 
 SWEP.EFTErgo = 50
+
+-- this thing WILL one hand sprint always
+SWEP.OneHandedSprint = true
+SWEP.SprintAng = Angle(3, 33, -12)
+SWEP.SprintPos = Vector(3, -7.1, -9)
+SWEP.HoldTypeSprint = "normal"

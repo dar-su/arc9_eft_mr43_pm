@@ -37,8 +37,9 @@ SWEP.ShootSoundIndoor = { path .. "pb_indoor_close1.ogg", path .. "pb_indoor_clo
 SWEP.DistantShootSound = { path .. "pb_distant1.ogg", path .. "pb_distant1.ogg" }
 SWEP.DistantShootSoundIndoor = { path .. "pb_indoor_distant1.ogg", path .. "pb_indoor_distant1.ogg" }
 
-SWEP.RecoilUp = 2.5
-SWEP.RecoilAutoControl = 6
+SWEP.RecoilAutoControl = 3.25 -- autocompenstaion, could be cool if set to high but it also affects main recoil
+SWEP.RecoilUp   = 2.3   -- up recoil
+SWEP.VisualRecoil = 0.5 -- general multiplier for it
 
 SWEP.DefaultElements = {"eft_pb", "pmmallowed"} 
 
