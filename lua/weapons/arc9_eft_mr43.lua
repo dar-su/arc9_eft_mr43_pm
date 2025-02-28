@@ -62,6 +62,15 @@ SWEP.DispersionSpreadAddHipFire = 0.02
 SWEP.DispersionSpreadMultMove = 1.5
 SWEP.DispersionSpreadAddMove = 0.015
 
+-- prevent subbase to fuck up shotgun spread
+SWEP.SpreadAddHipFire = 0
+SWEP.SpreadMultMove = 1
+SWEP.SpreadAddMove = 0
+SWEP.SpreadHook = false
+SWEP.SpreadAddHot = 0
+SWEP.DispersionHook = ARC9EFT.SpreadBonus or nil
+SWEP.DispersionSpreadAddHot = 0.01 -- overheat debuff
+
 SWEP.RPM = 830 -- should be 900 but the more rpm the bigger double-tap recoil :(
 
 SWEP.ChamberSize = 0 -- no mag
