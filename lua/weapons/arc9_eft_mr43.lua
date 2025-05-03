@@ -5,24 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-ARC9:AddPhrase("eft_class_weapon_dbsg", "Double-barrel shotgun", "en")
-ARC9:AddPhrase("eft_class_weapon_dbsg", "Двуствольное ружье", "ru")
-ARC9:AddPhrase("eft_class_weapon_dbsg", "Dowbwe-bawwew showtguwun", "uwu")
-ARC9:AddPhrase("eft_weapon_sawedoff", "MP-43 Sawed-off", "en")
-ARC9:AddPhrase("eft_weapon_sawedoff", "Обрез MP-43", "ru")
-ARC9:AddPhrase("eft_weapon_sawedoff", "MP-43 Sawed-owo :3", "uwu")
-SWEP.PrintName = "MP-43-1C"
-SWEP.Description = [[A hunter's dream. A classic double-barrelled beauty, simple and elegant. Fed with 12 gauge shells.]]
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_mp431c")
+SWEP.Description = "eft_weapon_mp431c_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_dbsg")
+SWEP.Class = "eft_class_weapon_dbsg"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_sg")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = "Baikal",
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "12 Gauge",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= "Break",
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_ussr"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "1986"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_izhevsk",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_12g",
+    ["eft_trivia_act3"]= "eft_trivia_act_break",
+    ["eft_trivia_country4"] = "eft_trivia_country_ussr",
+    ["eft_trivia_year5"] = "1986"
 }
 
 SWEP.StandardPresets = false 

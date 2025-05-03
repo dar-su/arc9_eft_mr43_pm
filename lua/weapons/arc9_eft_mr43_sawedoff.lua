@@ -10,11 +10,11 @@ SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_sg")
 
 SWEP.Slot = 1
 
-SWEP.PrintName = ARC9:GetPhrase("eft_weapon_sawedoff")
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_mp43sawedoff_alt")
 
 SWEP.CustomizePos = Vector(19.5, 22, 3)
 
-SWEP.Description = [[A double-barreled sawed-off classic. Ryzhy's personal weapon. Loaded with 12-gauge rounds.]]
+SWEP.Description = "eft_weapon_mp43sawedoff_desc"
 
 SWEP.DefaultElements = {"eft_mr43_sawedoff"} 
 

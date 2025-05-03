@@ -11,20 +11,17 @@ SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_pist")
 SWEP.Slot = 1
 SWEP.ViewModel = "models/weapons/arc9/darsu_eft/c_pb.mdl"
 
-ARC9:AddPhrase("eft_weapon_pb", "PB", "en")
-ARC9:AddPhrase("eft_weapon_pb", "ПБ", "ru")
-ARC9:AddPhrase("eft_weapon_pb", "PB", "uwu")
 SWEP.PrintName = ARC9:GetPhrase("eft_weapon_pb")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = ARC9:GetPhrase("eft_trivia_manuf_tsniitochmash"),
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "9x18mm Makarov",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= ARC9:GetPhrase("eft_trivia_act_blow"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_ussr"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "1967"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_tsniitochmash",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_9x18",
+    ["eft_trivia_act3"]= "eft_trivia_act_blow",
+    ["eft_trivia_country4"] = "eft_trivia_country_ussr",
+    ["eft_trivia_year5"] = "1967"
 }
 
-SWEP.Description = [[The PB pistol (Pistolét Besshúmnyy - "Silenced Pistol", GRAU Index - 6P9) was designed with a two-part suppressor, the main suppressor and a section built into the barrel, which allows the weapon to be operated without problems even without the main suppressor attached, but operating the weapon in this way will not mitigate the sound or muzzle flash. It was intended for army reconnaissance groups and USSR KGB personnel and was introduced into service in 1967. Still operated nowadays by FSB special forces and internal troops of the Ministry of Internal Affairs.]]
+SWEP.Description = "eft_weapon_pb_desc"
 
 SWEP.IronSights = {
     Pos = Vector(-4.265, -8, 2.05),

@@ -5,24 +5,18 @@ SWEP.Spawnable = true
 
 ------------------------- |||           Trivia            ||| -------------------------
 
-ARC9:AddPhrase("eft_weapon_pm", "Makarov PM", "en")
-ARC9:AddPhrase("eft_weapon_pm", "Макаров ПМ", "ru")
-ARC9:AddPhrase("eft_weapon_pm", "Makawow PM", "uwu")
-ARC9:AddPhrase("eft_weapon_pmt", "Makarov PM (t)", "en")
-ARC9:AddPhrase("eft_weapon_pmt", "Макаров ПМ (г)", "ru")
-ARC9:AddPhrase("eft_weapon_pmt", "Makawow PM (:3)", "uwu")
 SWEP.PrintName = ARC9:GetPhrase("eft_weapon_pm")
-SWEP.Description = [[The time-proven PM pistol (Pistolét Makárova - "Makarov Pistol", GAU Index - 56-A-125). Due to the ubiquitous spread of both the pistol and its ammunition, as well as its exceptional reliability, light weight, and compact size, the PM still sees wide service in both police, military, and security forces. Although the damage makes you wish for the best.]]
+SWEP.Description = "eft_weapon_pm_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_pist")
+SWEP.Class = "eft_class_weapon_pist"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_pist")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = ARC9:GetPhrase("eft_trivia_manuf_kalashnikov"),
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "9x18mm Makarov",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= ARC9:GetPhrase("eft_trivia_act_blow"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_ussr"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "1951"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_izhevsk",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_9x18",
+    ["eft_trivia_act3"]= "eft_trivia_act_blow",
+    ["eft_trivia_country4"] = "eft_trivia_country_ussr",
+    ["eft_trivia_year5"] = "1951"
 }
 
 SWEP.StandardPresets = false 
@@ -198,21 +192,13 @@ SWEP.ShellSounds = ARC9EFT.Shells9mm
 SWEP.HookP_NameChange = function(self, name)
     local elements = self:GetElements()
 
-    if elements["eft_pm_thread"] then
-        return ARC9:GetPhrase("eft_weapon_pmt")
-    else
-        return ARC9:GetPhrase("eft_weapon_pm")
-    end
+    if elements["eft_pm_thread"] then return ARC9:GetPhrase("eft_weapon_pmt") end
 end
 
 SWEP.HookP_DescriptionChange = function(self, desc)
     local elements = self:GetElements()
 
-    if elements["eft_pm_thread"] then
-        return [[A semi-mythical Makarov pistol with an extended threaded barrel for equipping a sound suppressor. Some claim it was a limited production series manufactured in Bulgaria, whilst others insist on it being East German, or even a handcrafted upgrade. As for how it ended up in the Norvinsk region, no living soul could tell you now.]]
-    else
-        return [[The time-proven PM pistol (Pistolét Makárova - "Makarov Pistol", GAU Index - 56-A-125). Due to the ubiquitous spread of both the pistol and its ammunition, as well as its exceptional reliability, light weight, and compact size, the PM still sees wide service in both police, military, and security forces. Although the damage makes you wish for the best.]]
-    end
+    if elements["eft_pm_thread"] then return "eft_weapon_pmt_desc" end
 end
 
 ------------------------- |||           Sounds            ||| -------------------------
